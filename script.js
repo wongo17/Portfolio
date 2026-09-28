@@ -27,9 +27,9 @@ const projects = [
     },
     media: { cad: "", prototype: "", drawing: "", video: "" },
     extraImages: [
-  {src: "SOLIDWORKS Portfolio/20250615_121102.jpg"},
-  {src: "SOLIDWORKS Portfolio/20250615_121112.jpg"},
-  {src: "SOLIDWORKS Portfolio/20250615_121116.jpg"}
+  {src: "Dummy/20250615_121102.jpg"},
+  {src: "Dummy/20250615_121112.jpg"},
+  {src: "Dummy/20250615_121116.jpg"}
     ]
   },
   {
