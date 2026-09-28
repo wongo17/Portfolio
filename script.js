@@ -39,7 +39,7 @@ const projects = [
     category: "CAD / Mechanical Design",
     description: "Created detailed 3D CAD models from engineering drawings while maintaining accurate dimensions and geometry.",
     tags: ["SOLIDWORKS", "CAD", "Engineering Drawings", "Mechanical Design"],
-    cover: "SOLIDWORKS Portfolio/Screenshot 2026-09-27 221558.png",
+    cover: "SOLIDWORKS Portfolio/3.png",
     coverAlt: "Various CAD renderings",
     github: "",
     details: {
