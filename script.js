@@ -34,7 +34,7 @@ const projects = [
     category: "CAD / Mechanical Design",
     description: "Created detailed 3D CAD models from engineering drawings while maintaining accurate dimensions and geometry.",
     tags: ["SOLIDWORKS", "CAD", "Engineering Drawings", "Mechanical Design"],
-    cover: "SOLIDWORKS Portfolio/1.png",
+    cover: "SOLIDWORKS Portfolio/Screenshot 2026-09-27 221558.png",
     coverAlt: "Various CAD renderings",
     github: "",
     details: {
@@ -46,10 +46,21 @@ const projects = [
       results: "Gained experience using CAD systems, and how to design with manufacturing in priority.",
       learned: "Taught me about the importance of how a good approach can save hours. Taught how to CAD from a manufacturing background, ensuring easy manufacturing, and smart tolerences."
     },
-    media: { cad: "", prototype: "", drawing: "", video: "" },
     extraImages: [
   {src: "SOLIDWORKS Portfolio/1.png"},
-  {src: "SOLIDWORKS Portfolio/2.png"}
+  {src: "SOLIDWORKS Portfolio/2.png"},
+  {src: "SOLIDWORKS Portfolio/3.png"},
+  {src: "SOLIDWORKS Portfolio/4.png"},
+  {src: "SOLIDWORKS Portfolio/5.png"},
+  {src: "SOLIDWORKS Portfolio/6.png"},
+  {src: "SOLIDWORKS Portfolio/7.png"},
+  {src: "SOLIDWORKS Portfolio/8.png"},
+  {src: "SOLIDWORKS Portfolio/9.png"},
+  {src: "SOLIDWORKS Portfolio/10.png"},
+  {src: "SOLIDWORKS Portfolio/11.png"},
+  {src: "SOLIDWORKS Portfolio/12.png"},
+  {src: "SOLIDWORKS Portfolio/13.png"},
+  {src: "SOLIDWORKS Portfolio/14.png"}
 ]
   },
   {
