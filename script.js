@@ -193,9 +193,6 @@ projectGrid.addEventListener("click", event => {
     </section>
   `).join("");
 
-  const github = project.github
-    ? `<a class="repo-link" href="${escapeHTML(project.github)}" target="_blank" rel="noopener noreferrer">View GitHub repository <span aria-hidden="true">↗</span></a>`
-    : `<span class="repo-placeholder">GitHub repository link can be added here.</span>`;
 
   // Only create the first few images when the project opens. The rest load on request.
   activeGalleryItems = buildGalleryItems(project);
