@@ -48,16 +48,8 @@ const projects = [
     },
     media: { cad: "", prototype: "", drawing: "", video: "" },
     extraImages: [
-  {
-    src: "images/arm-front.jpg",
-    alt: "Front view of the bionic arm prototype",
-    caption: "Front view"
-  },
-  {
-    src: "images/arm-side.jpg",
-    alt: "Side view of the bionic arm prototype",
-    caption: "Side view"
-  }
+  {src: "SOLIDWORKS Portfolio/1.png"},
+  {src: "SOLIDWORKS Portfolio/2.png"}
 ]
   },
   {
