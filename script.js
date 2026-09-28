@@ -13,8 +13,6 @@ const projects = [
     description: "Working with a team to design and develop a simulation crash test dummy using mechanical design, electronics, and programming.",
     tags: ["CAD", "Robotics", "Electronics", "3D Printing", "Programming"],
     cover: "Dummy/20250615_121116.jpg",
-    coverAlt: "Bionic arm prototype",
-    github: "", // Add a repository URL when you have one.
     details: {
       problem: "Develop a crash test dummy that simulates human motion during a collision.",
       role: "Mechanical Designer / Testing.",
@@ -40,7 +38,6 @@ const projects = [
     tags: ["SOLIDWORKS", "CAD", "Engineering Drawings", "Mechanical Design"],
     cover: "SOLIDWORKS Portfolio/3.png",
     coverAlt: "Various CAD renderings",
-    github: "",
     details: {
       problem: "Translate a dimensioned engineering drawing into a precise, parametric models.",
       role: "I created CAD models and check its geometry against the supplied drawing.",
@@ -76,8 +73,6 @@ const projects = [
     description: "I worked in a lab conducting testing on soil, and asphalt.",
     tags: ["Work Experience", "Soil", "Engineering", "Lab"],
     cover: "Soil/IMG_20260721_172803.jpg",
-    coverAlt: "Assembled robotic system",
-    github: "",
     details: {
       problem: "Testing needs to be done to verify for construction.",
       role: "Lab Technician",
