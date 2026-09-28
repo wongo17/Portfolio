@@ -6,26 +6,25 @@
    ========================================================= */
 const projects = [
   {
-    id: "bionic-arm",
+    id: "Crash Test Dummy Project",
     number: "01",
-    title: "Bionic Arm Project",
-    category: "Robotics / Assistive Technology",
-    description: "Working with a team to design and develop a functional bionic arm using mechanical design, electronics, programming, and assistive technology.",
-    tags: ["CAD", "Arduino", "Electronics", "3D Printing", "Programming"],
-    cover: "",
+    title: "Crash Test Dummy Project",
+    category: "Robotics / Design / Manufacturing / 3D Printing",
+    description: "Working with a team to design and develop a simulation crash test dummy using mechanical design, electronics, and programming.",
+    tags: ["CAD", "Robotics", "Electronics", "3D Printing", "Programming"],
+    cover: "Dummy/20250615_121116.jpg",
     coverAlt: "Bionic arm prototype",
     github: "", // Add a repository URL when you have one.
     details: {
-      problem: "Develop a functional bionic arm prototype that brings mechanical design, actuation, and control together.",
-      role: "[Describe the subsystem you personally designed, programmed, assembled, or tested.]",
-      process: "[Explain your team's sketches, calculations, CAD, electronics, printed iterations, programming, and test decisions.]",
+      problem: "Develop a crash test dummy that simulates human motion during a collision.",
+      role: "Mechanical Designer / Testing.",
+      process: "We began with a simple design to understand where we should start, then added features when we realized that it was lacking in some ways. That is part of the engineering process. We added these peices to mimic the weight and musculature of a human.",
       tools: "CAD, Arduino, electronics, 3D printing, and programming.",
-      challenges: "[Describe one real fit, movement, control, or reliability problem and how you worked through it.]",
-      solution: "[Explain how the prototype works and which design choices made it possible.]",
-      results: "[Add a demo, measured performance, progress milestone, or test result.]",
-      learned: "[Share a technical lesson and something you learned from collaborating with the team.]"
+      challenges: "We worked on a very tight budget, and short timetable, creating a conflict between implementing engineering ideas and having the means to do so.",
+      solution: "It simulates a young female child.",
+      results: "We recorded displacement in the x, y, and z, yaw, pitch, roll, velocity, and acceleration.",
+      learned: "The iterative engineering process, R&D, GD&T, mechanical design and implementation."
     },
-    media: { cad: "", prototype: "", drawing: "", video: "" },
     extraImages: [
   {src: "Dummy/20250615_121102.jpg"},
   {src: "Dummy/20250615_121112.jpg"},
@@ -70,48 +69,30 @@ const projects = [
 ]
   },
   {
-    id: "spur-gear",
+    id: "work",
     number: "03",
-    title: "Spur Gear Design",
-    category: "CAD / Manufacturing",
-    description: "Designed and modeled a spur gear component based on engineering specifications and manufacturing dimensions.",
-    tags: ["SolidWorks", "CAD", "Mechanical Design", "Manufacturing"],
-    cover: "",
-    coverAlt: "CAD rendering of a spur gear component",
-    github: "",
-    details: {
-      problem: "Model a spur gear component to the dimensions and constraints in an engineering specification.",
-      role: "I designed the component and created its 3D CAD model.",
-      process: "[Describe how you used the supplied dimensions to plan and build the gear geometry.]",
-      tools: "SolidWorks, CAD, mechanical design, and manufacturing specifications.",
-      challenges: "[Describe a geometry or manufacturability issue you encountered.]",
-      solution: "[Explain the modeling choices that resolved that issue.]",
-      results: "[Add screenshots, drawing views, and final dimensions.]",
-      learned: "[Describe what you learned about designing a part from specifications.]"
-    },
-    media: { cad: "", prototype: "", drawing: "", video: "" }
-  },
-  {
-    id: "robotics-system",
-    number: "04",
-    title: "Robotics Project",
-    category: "Robotics / Programming",
-    description: "Designed, assembled, and programmed a robotic system while applying mechanical, electrical, and programming concepts.",
-    tags: ["Robotics", "Arduino", "Programming", "Mechanical Design"],
-    cover: "",
+    title: "Lab Technician @ Stratton Prime Drilling Inc.",
+    category: "Soil Engineering / Lab",
+    description: "I worked in a lab conducting testing on soil, and asphalt.",
+    tags: ["Work Experience", "Soil", "Engineering", "Lab"],
+    cover: "Soil/IMG_20260721_172803.jpg",
     coverAlt: "Assembled robotic system",
     github: "",
     details: {
-      problem: "[Describe what the robot needed to sense, move, or accomplish.]",
-      role: "[Specify the mechanical, electrical, and software work you personally completed.]",
-      process: "[Outline your design, assembly, circuit, code, and testing steps.]",
-      tools: "Robotics, Arduino, programming, and mechanical design.",
-      challenges: "[Explain a real hardware or software challenge you debugged.]",
-      solution: "[Describe how the mechanical parts, electronics, and code work together.]",
-      results: "[Add a measured outcome, photo, or short demonstration video.]",
-      learned: "[Explain how this project changed your approach to designing and debugging.]"
+      problem: "Testing needs to be done to verify for construction.",
+      role: "Lab Technician",
+      process: "Following a procedure and using past experience to conduct testing.",
+      learned: "I learned analysis skills, teamwork, and how to robotically complete tasks."
     },
-    media: { cad: "", prototype: "", drawing: "", video: "" }
+    extraImages: [
+  {src: "Soil/IMG_20260717_145232.jpg"},
+  {src: "Soil/IMG_20260721_172803.jpg"},
+  {src: "Soil/IMG_20260817_145833.jpg"},
+  {src: "Soil/IMG_20260818_125722.jpg"},
+  {src: "Soil/IMG_20260818_160643.jpg"},
+  {src: "Soil/IMG_20260821_171824.jpg"},
+  {src: "Soil/IMG_20260828_124327.jpg"}
+]
   }
 ];
 
