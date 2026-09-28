@@ -45,6 +45,7 @@ const projects = [
     details: {
       problem: "Translate a dimensioned engineering drawing into a precise, parametric models.",
       role: "I created CAD models and check its geometry against the supplied drawing.",
+      process: "[Add the sketches, features, and modeling steps used for these CAD parts.]",
       tools: "SOLIDWORKS, Microsoft Excel, CAD, engineering drawings, and dimensional checks.",
       challenges: "Properly approaching the CAD drawing to ensure full parametric dimensions, minimal required sketches, and optimal efficiency.",
       solution: "CAD is partially about approaching with unique solutions. Whether that be implementing revolves, unique extrudes, or deleting some faces.",
@@ -128,7 +129,7 @@ function tagMarkup(tags) {
 function coverMarkup(project, isDialog = false) {
   const className = isDialog ? "dialog-cover" : "project-media";
   const image = project.cover
-    ? `<img src="${escapeHTML(project.cover)}" alt="${escapeHTML(project.coverAlt)}" loading="lazy">`
+    ? `<img src="${escapeHTML(project.cover)}" alt="${escapeHTML(project.coverAlt)}" loading="lazy" decoding="async">`
     : `<span class="media-cross" aria-hidden="true">+</span>
        <span class="media-label">PROJECT IMAGE</span>
        <span class="media-subtitle">${escapeHTML(project.title)}</span>`;
@@ -168,21 +169,40 @@ const galleryLabels = [
   ["drawing", "Engineering drawings / diagrams"], ["video", "Demo video"]
 ];
 
-function galleryMarkup(project) {
-  return galleryLabels.map(([key, label]) => {
-    const path = project.media[key];
+function buildGalleryItems(project) {
+  const extraImages = project.extraImages || [];
+  const projectMedia = project.media || {};
+  // Once photos are added, hide unused placeholder slots in the gallery.
+  const showPlaceholders = !galleryLabels.some(([key]) => projectMedia[key]) && extraImages.length === 0;
+
+  const standardMedia = galleryLabels.filter(([key]) => showPlaceholders || projectMedia[key]).map(([key, label]) => {
+    const path = projectMedia[key];
     const media = path && key === "video"
       ? `<video controls preload="metadata" aria-label="${escapeHTML(label)} for ${escapeHTML(project.title)}"><source src="${escapeHTML(path)}" type="video/mp4">Your browser does not support this video.</video>`
       : path
-        ? `<img src="${escapeHTML(path)}" alt="${escapeHTML(label)} for ${escapeHTML(project.title)}" loading="lazy">`
+        ? `<img src="${escapeHTML(path)}" alt="${escapeHTML(label)} for ${escapeHTML(project.title)}" loading="lazy" decoding="async">`
         : `<div class="gallery-placeholder" role="img" aria-label="Placeholder for ${escapeHTML(label)}">+</div>`;
     return `<div class="gallery-item">${media}<span>${escapeHTML(label)}</span></div>`;
-  }).join("");
+  });
+
+  const additionalPhotos = extraImages.filter(image => image.src).map((image, index) => {
+    const caption = image.caption || `Image ${index + 1}`;
+    const alt = image.alt || `${project.title}, image ${index + 1}`;
+    return `<div class="gallery-item">
+      <img src="${escapeHTML(image.src)}" alt="${escapeHTML(alt)}" loading="lazy" decoding="async">
+      <span>${escapeHTML(caption)}</span>
+    </div>`;
+  });
+
+  return [...standardMedia, ...additionalPhotos];
 }
 
 const projectDialog = document.querySelector("#project-dialog");
 const dialogContent = document.querySelector("#dialog-content");
 const dialogClose = document.querySelector("#dialog-close");
+const galleryBatchSize = 4;
+let activeGalleryItems = [];
+let galleryShownCount = 0;
 
 projectGrid.addEventListener("click", event => {
   const button = event.target.closest("button[data-project]");
@@ -201,6 +221,11 @@ projectGrid.addEventListener("click", event => {
     ? `<a class="repo-link" href="${escapeHTML(project.github)}" target="_blank" rel="noopener noreferrer">View GitHub repository <span aria-hidden="true">↗</span></a>`
     : `<span class="repo-placeholder">GitHub repository link can be added here.</span>`;
 
+  // Only create the first few images when the project opens. The rest load on request.
+  activeGalleryItems = buildGalleryItems(project);
+  galleryShownCount = Math.min(galleryBatchSize, activeGalleryItems.length);
+  const remaining = activeGalleryItems.length - galleryShownCount;
+
   dialogContent.innerHTML = `
     ${coverMarkup(project, true)}
     <div class="dialog-body">
@@ -210,13 +235,29 @@ projectGrid.addEventListener("click", event => {
       <div class="tags" aria-label="Technologies used">${tagMarkup(project.tags)}</div>
       <div class="detail-grid">${details}</div>
       <h3 class="gallery-heading">Project media</h3>
-      <div class="project-gallery">${galleryMarkup(project)}</div>
+      <div class="project-gallery" id="project-gallery">${activeGalleryItems.slice(0, galleryShownCount).join("")}</div>
+      ${remaining ? `<button class="button button-secondary gallery-more" type="button" aria-controls="project-gallery">Show ${Math.min(galleryBatchSize, remaining)} more photos (${remaining} remaining) <span aria-hidden="true">↓</span></button>` : ""}
       ${github}
     </div>
   `;
   projectDialog.showModal();
   projectDialog.scrollTop = 0;
   dialogClose.focus();
+});
+
+dialogContent.addEventListener("click", event => {
+  const button = event.target.closest(".gallery-more");
+  if (!button) return;
+
+  const nextItems = activeGalleryItems.slice(galleryShownCount, galleryShownCount + galleryBatchSize);
+  dialogContent.querySelector("#project-gallery").insertAdjacentHTML("beforeend", nextItems.join(""));
+  galleryShownCount += nextItems.length;
+  const remaining = activeGalleryItems.length - galleryShownCount;
+  if (remaining) {
+    button.innerHTML = `Show ${Math.min(galleryBatchSize, remaining)} more photos (${remaining} remaining) <span aria-hidden="true">↓</span>`;
+  } else {
+    button.remove();
+  }
 });
 
 dialogClose.addEventListener("click", () => projectDialog.close());
