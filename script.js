@@ -28,26 +28,37 @@ const projects = [
     media: { cad: "", prototype: "", drawing: "", video: "" }
   },
   {
-    id: "brake-rotor",
+    id: "SOLIDWORKS Portfolio",
     number: "02",
-    title: "Brake Rotor CAD Model",
+    title: "SOLIDWORKS CAD Portfolio",
     category: "CAD / Mechanical Design",
-    description: "Created a detailed 3D CAD model of a brake rotor from an engineering drawing while maintaining accurate dimensions and geometry.",
-    tags: ["SolidWorks", "CAD", "Engineering Drawings", "Mechanical Design"],
-    cover: "",
-    coverAlt: "CAD rendering of a brake rotor",
+    description: "Created detailed 3D CAD models from engineering drawings while maintaining accurate dimensions and geometry.",
+    tags: ["SOLIDWORKS", "CAD", "Engineering Drawings", "Mechanical Design"],
+    cover: "SOLIDWORKS Portfolio/1.png",
+    coverAlt: "Various CAD renderings",
     github: "",
     details: {
-      problem: "Translate a dimensioned engineering drawing into a precise, editable 3D brake rotor model.",
-      role: "I created the CAD model and checked its geometry against the supplied drawing.",
-      process: "[Explain the sketches, features, hole patterns, and dimension checks used in your model.]",
-      tools: "SolidWorks, CAD, engineering drawings, and dimensional checks.",
-      challenges: "[Describe a feature or dimension that required careful interpretation.]",
-      solution: "[Explain how you structured the feature tree and maintained accurate geometry.]",
-      results: "[Add a rendering, a drawing view, and any dimensions you verified.]",
-      learned: "[Explain what the work taught you about reading drawings and building editable models.]"
+      problem: "Translate a dimensioned engineering drawing into a precise, parametric models.",
+      role: "I created CAD models and check its geometry against the supplied drawing.",
+      tools: "SOLIDWORKS, Microsoft Excel, CAD, engineering drawings, and dimensional checks.",
+      challenges: "Properly approaching the CAD drawing to ensure full parametric dimensions, minimal required sketches, and optimal efficiency.",
+      solution: "CAD is partially about approaching with unique solutions. Whether that be implementing revolves, unique extrudes, or deleting some faces.",
+      results: "Gained experience using CAD systems, and how to design with manufacturing in priority.",
+      learned: "Taught me about the importance of how a good approach can save hours. Taught how to CAD from a manufacturing background, ensuring easy manufacturing, and smart tolerences."
     },
-    media: { cad: "", prototype: "", drawing: "", video: "" }
+    media: { cad: "", prototype: "", drawing: "", video: "" },
+    extraImages: [
+  {
+    src: "images/arm-front.jpg",
+    alt: "Front view of the bionic arm prototype",
+    caption: "Front view"
+  },
+  {
+    src: "images/arm-side.jpg",
+    alt: "Side view of the bionic arm prototype",
+    caption: "Side view"
+  }
+]
   },
   {
     id: "spur-gear",
