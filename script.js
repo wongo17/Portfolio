@@ -25,7 +25,12 @@ const projects = [
       results: "[Add a demo, measured performance, progress milestone, or test result.]",
       learned: "[Share a technical lesson and something you learned from collaborating with the team.]"
     },
-    media: { cad: "", prototype: "", drawing: "", video: "" }
+    media: { cad: "", prototype: "", drawing: "", video: "" },
+    extraImages: [
+  {src: "SOLIDWORKS Portfolio/20250615_121102.jpg"},
+  {src: "SOLIDWORKS Portfolio/20250615_121112.jpg"},
+  {src: "SOLIDWORKS Portfolio/20250615_121116.jpg"}
+    ]
   },
   {
     id: "SOLIDWORKS Portfolio",
