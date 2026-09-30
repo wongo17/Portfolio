@@ -308,3 +308,20 @@ h1, h2, h3 { line-height: 1.12; letter-spacing: -0.045em; }
   *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
   .js-enabled .reveal { opacity: 1; transform: none; }
 }
+
+.hero-visual.real-photo,
+.about-photo.real-photo {
+  display: block;
+  width: 100%;
+  min-height: 0;
+  padding: 0;
+  object-fit: cover;
+}
+
+.hero-visual.real-photo { height: 480px; }
+.about-photo.real-photo { height: 535px; }
+
+@media (max-width: 700px) {
+  .hero-visual.real-photo { height: 320px; }
+  .about-photo.real-photo { height: 380px; }
+}
